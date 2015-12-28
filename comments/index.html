@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Comments</title>
+      <script src="../lib/jquery-1.11.3.min.js"></script>
+      <script src="../lib/jquery-ui.min.js"></script>
+      <script src="../lib/handlebars-latest.js"></script>
+      <script src="functions.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+
+      <div class="container">
+         <div class="article">
+            <h1>Прекрасное создано быть прекрасным</h1>
+            <div class="article__i">
+               <img src="http://illustrators.ru/uploads/post/image/16655/main_original.jpg" alt="">
+            </div>
+            <div class="article__i">
+               <p>Заклинание (заклятие) — вид ритуально-магической речи; прямое обращение к объекту магического воздействия в императивной форме — требования, приказа, побуждения, просьбы, мольбы, предупреждения, запрещения, угрозы. Может быть самостоятельным вербальным ритуалом (таковы, например, приветствия типа «здравствуй!», проклятия или отсылки типа «иди ты к чёрту!»), приговором при обрядовом или практическом действии, а также составной частью более сложных вербальных форм — заговоров, благопожеланий, обрядовых песен (например, колядок) и др.
+               </p>
+            </div>
+         </div>
+         <div class="comments">
+            <h2>Комментарии</h1>
+            <p class="comments__empty">Тут будут выовдиться ваши комментарии</p>
+            <ul class="comments__list">
+            </ul>
+            <form class="form-send" action="">
+               <textarea name="form-send__comment" class="form-send__comment" cols="100" rows="10"></textarea></br>
+               <input type="button" name="send-comment" value="Отправить комментарий"/>
+            </form>
+         </div>
+
+      </div>
+   <script id="additional-form" type="text/x-handlebars-template">
+      <form name={{form_name}} action="post">
+         <textarea name={{textarea_name}} cols="30" rows="5"></textarea></br>
+         <input type="button" name={{input_name}} value="Ответить"/>
+         <input type="button" name="hide-form" value="Скрыть форму"/>
+      </form>
+   </script>
+
+   <script id="comments__i" type="text/x-handlebars-template">
+      <li class="comments__item">
+         <b>#</b> : <span class="comment-text">{{value}}</span>
+         <a class="answer" href="#">Ответить</a>
+         <a class="delete" href="#">Удалить</a>
+         <a class="update" href="#">Редактировать</a>
+         <span class="answer-count"></span>
+      </li>
+   </script>
+
+   <script id="comments__answer__i" type="text/x-handlebars-template">
+      <li class="comments__answer"><b>-</b> {{value}} </li>
+   </script>
+
+   <script id="comment__text" type="text/x-handlebars-template">
+      <span class="comment-text"> {{value}} </span>
+   </script>
+
+   <script id="answer__counter" type="text/x-handlebars-template">
+      <span class="answer-count">Количество ответов: {{count}}</span>
+   </script>
+
+
+   </body>
+</html>
